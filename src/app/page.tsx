@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Provider store={store}>
       <main className={styles.container}>
-        <h1 className={styles.title}>What's Your Plan Today?</h1>
+        <h1 className={styles.title}>What&apos;s Your Plan Today?</h1>
         <PlannerForm />
         <PlannerResult />
       </main>
