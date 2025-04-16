@@ -9,7 +9,7 @@ export const generatePlan = createAsyncThunk(
       body: JSON.stringify({ tasks }),
     });
     const data = await response.json();
-    return data.plan;
+    return data.plan || data.error;
   }
 );
 

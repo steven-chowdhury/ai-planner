@@ -11,11 +11,14 @@ export default function PlannerResult() {
   return (
     <div className={styles.resultContainer}>
       {loading && <Spinner />}
-      {!loading && plan && (
+      {!loading && plan && !plan.startsWith("Failed to") && (
         <div className={styles.resultBox}>
           <h2 className={styles.resultTitle}>Your Optimized Day:</h2>
           <p>{plan}</p>
         </div>
+      )}
+      {!loading && plan.startsWith("Failed to") && (
+        <div className={styles.errorBox}>{plan}</div>
       )}
     </div>
   );
